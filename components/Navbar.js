@@ -57,6 +57,23 @@ export default function Navbar() {
           <a href="https://wa.me/351000000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
             <MessageCircle size={18} strokeWidth={1.5} className="text-white transition hover:text-[#e2c58e]" />
           </a>
+          <a
+            href="#marcacoes"
+            className="d-inline-flex align-items-center"
+            style={{
+              border: "1px solid rgba(201,164,106,.75)",
+              padding: "12px 24px",
+              fontSize: 10,
+              fontWeight: 700,
+              letterSpacing: ".2em",
+              color: "#e2c58e",
+              transition: "all .3s"
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#c9a46a"; e.currentTarget.style.color = "#000"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#e2c58e"; }}
+          >
+            MARCAR AGORA
+          </a>
         </div>
 
         <button
@@ -88,6 +105,21 @@ export default function Navbar() {
               </a>
             ))}
             <div className="d-flex gap-3 py-3">
+              <a
+                href="#marcacoes"
+                onClick={() => setOpen(false)}
+                className="d-inline-flex align-items-center gap-2 flex-grow-1 justify-content-center"
+                style={{
+                  background: "#d6ad6d",
+                  padding: "14px 20px",
+                  fontSize: 10,
+                  fontWeight: 900,
+                  letterSpacing: ".18em",
+                  color: "#000"
+                }}
+              >
+                MARCAR AGORA
+              </a>
               <a
                 href="https://www.instagram.com/lampss_barber/"
                 target="_blank"

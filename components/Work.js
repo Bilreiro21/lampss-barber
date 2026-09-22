@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { X } from "lucide-react";
 
 const works = [
   ["work-01.jpg", "FADE"],
@@ -10,7 +11,7 @@ const works = [
   ["work-04.jpg", "SIGNATURE"]
 ];
 
-function WorkCard({ file, title, index }) {
+function WorkCard({ file, title, index, onClick }) {
   const [hovered, setHovered] = useState(false);
   
   return (
@@ -20,10 +21,12 @@ function WorkCard({ file, title, index }) {
         height: "clamp(280px, 40vw, 430px)", 
         border: "1px solid",
         borderColor: hovered ? "rgba(201,164,106,.5)" : "rgba(255,255,255,.08)",
-        transition: "border-color .5s ease"
+        transition: "border-color .5s ease",
+        cursor: "pointer"
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={onClick}
     >
       <img
         src={`/images/${file}`}
@@ -79,6 +82,8 @@ function WorkCard({ file, title, index }) {
 }
 
 export default function Work() {
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+
   return (
     <section id="trabalho" style={{ background: "#0c0a08", padding: "112px 0" }}>
       <div className="container">
@@ -99,11 +104,42 @@ export default function Work() {
               transition={{ delay: i * .08 }}
               className={`col-12 col-sm-6 ${i === 0 || i === 3 ? "col-md-7" : "col-md-5"}`}
             >
-              <WorkCard file={file} title={title} index={i} />
+              <WorkCard file={file} title={title} index={i} onClick={() => setSelectedPhoto(file)} />
             </motion.div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedPhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+            style={{ background: "rgba(0,0,0,0.9)", zIndex: 9999, padding: "20px" }}
+            onClick={() => setSelectedPhoto(null)}
+          >
+            <button 
+              className="position-absolute top-0 end-0 bg-transparent border-0 text-white p-4"
+              onClick={() => setSelectedPhoto(null)}
+              style={{ cursor: "pointer" }}
+            >
+              <X size={32} />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              src={`/images/${selectedPhoto}`}
+              alt="Trabalho em destaque"
+              style={{ maxHeight: "90vh", maxWidth: "90vw", objectFit: "contain", borderRadius: "8px" }}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

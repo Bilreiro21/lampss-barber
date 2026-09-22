@@ -31,7 +31,7 @@ export default function About() {
               Um espaço pensado para quem valoriza o detalhe. Cada serviço é realizado
               com atenção, precisão e uma abordagem personalizada.
             </p>
-            <div className="row mt-4 pt-4 border-top" style={{ borderColor: "rgba(255,255,255,.1)" }}>
+            <div className="row mt-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,.1)" }}>
               <div className="col-6">
                 <p className="font-serif mb-1" style={{ fontSize: "2.2rem", color: "#e2c58e" }}>100%</p>
                 <p className="mb-0" style={{ fontSize: 9, letterSpacing: ".3em", color: "rgba(255,255,255,.35)" }}>DEDICAÇÃO</p>

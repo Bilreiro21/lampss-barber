@@ -158,7 +158,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="row mt-5 pt-4 border-top" style={{ borderColor: "rgba(255,255,255,.1)" }}>
+            <div className="row mt-5 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,.1)" }}>
               <div className="col-6 col-md-4 d-flex justify-content-center gap-2 mb-3 mb-md-0">
                 <MapPin className="mt-0.5 flex-shrink-0" size={20} strokeWidth={1.3} style={{ color: "#d6ad6d" }} />
                 <div className="text-start">

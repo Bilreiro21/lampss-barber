@@ -12,7 +12,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section id="servicos" className="position-relative border-top" style={{ borderColor: "rgba(255,255,255,.08)", background: "#080706", padding: "80px 0" }}>
+    <section id="servicos" className="position-relative" style={{ borderTop: "1px solid rgba(255,255,255,.08)", background: "#080706", padding: "80px 0" }}>
       <div className="container">
         <div className="text-center mb-5">
           <p className="mb-3" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".55em", color: "#d6ad6d" }}>OS NOSSOS SERVIÇOS</p>

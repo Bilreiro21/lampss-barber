@@ -1,85 +1,113 @@
 "use client";
 
-import { Instagram, MapPin, Phone, Clock3, Scissors, Mail, ArrowUp } from "lucide-react";
+import { Instagram, MapPin, Phone, Clock3, Scissors, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contactos" className="relative bg-[#050504] overflow-hidden">
+    <footer id="contactos" className="position-relative overflow-hidden" style={{ background: "#050504" }}>
       {/* Gold accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#c9a46a]/40 to-transparent" />
+      <div style={{ height: 1, background: "linear-gradient(to right, transparent, rgba(201,164,106,.4), transparent)" }} />
 
       {/* Main footer content */}
-      <div className="mx-auto w-[min(1120px,calc(100%-32px))] py-20">
+      <div className="container" style={{ padding: "80px 0" }}>
         {/* Top section — Logo + tagline centered */}
-        <div className="mb-16 flex flex-col items-center text-center">
+        <div className="d-flex flex-column align-items-center text-center mb-5">
           <img
             src="/images/logo.jpg"
             alt="Lamps Barber"
-            className="h-24 w-24 rounded-full object-cover border-2 border-[#c9a46a]/30 shadow-[0_0_40px_rgba(201,164,106,.15)]"
+            className="rounded-circle mx-auto d-block"
+            style={{
+              height: 96,
+              width: 96,
+              objectFit: "cover",
+              border: "2px solid rgba(201,164,106,.3)",
+              boxShadow: "0 0 40px rgba(201,164,106,.15)"
+            }}
           />
-          <h3 className="mt-6 font-serif text-2xl tracking-[.12em] text-white">LAMPS BARBER</h3>
-          <p className="mt-3 text-[10px] tracking-[.5em] text-[#c9a46a]/70">
+          <h3 className="font-serif mt-4 mb-2" style={{ fontSize: "1.5rem", letterSpacing: ".12em" }}>LAMPS BARBER</h3>
+          <p className="mb-0" style={{ fontSize: 10, letterSpacing: ".5em", color: "rgba(201,164,106,.7)" }}>
             ESTILO · QUALIDADE · ATITUDE
           </p>
         </div>
 
         {/* Info grid */}
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="row g-4 text-center">
           {/* Location */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#c9a46a]/20 bg-[#c9a46a]/5">
-              <MapPin size={20} className="text-[#d6ad6d]" strokeWidth={1.4} />
+          <div className="col-12 col-md-4">
+            <div className="d-flex flex-column align-items-center">
+              <div
+                className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+                style={{ width: 48, height: 48, border: "1px solid rgba(201,164,106,.2)", background: "rgba(201,164,106,.05)" }}
+              >
+                <MapPin size={20} style={{ color: "#d6ad6d" }} strokeWidth={1.4} />
+              </div>
+              <p className="mb-1" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.7)" }}>LOCALIZAÇÃO</p>
+              <p className="mb-0" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>
+                R. Dom João de Castro 38<br />
+                Barreiro, 2830-186
+              </p>
             </div>
-            <p className="text-[10px] font-semibold tracking-[.3em] text-white/70">LOCALIZAÇÃO</p>
-            <p className="mt-2 text-sm leading-6 text-white/40">
-              R. Dom João de Castro 38<br />
-              Barreiro, 2830-186
-            </p>
           </div>
 
           {/* Hours */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#c9a46a]/20 bg-[#c9a46a]/5">
-              <Clock3 size={20} className="text-[#d6ad6d]" strokeWidth={1.4} />
+          <div className="col-12 col-md-4">
+            <div className="d-flex flex-column align-items-center">
+              <div
+                className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+                style={{ width: 48, height: 48, border: "1px solid rgba(201,164,106,.2)", background: "rgba(201,164,106,.05)" }}
+              >
+                <Clock3 size={20} style={{ color: "#d6ad6d" }} strokeWidth={1.4} />
+              </div>
+              <p className="mb-1" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.7)" }}>HORÁRIO</p>
+              <p className="mb-0" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>
+                Ter — Sáb: 09:00 — 20:00<br />
+                Dom e Seg: Encerrado
+              </p>
             </div>
-            <p className="text-[10px] font-semibold tracking-[.3em] text-white/70">HORÁRIO</p>
-            <p className="mt-2 text-sm leading-6 text-white/40">
-              Ter — Sáb: 09:00 — 20:00<br />
-              Dom e Seg: Encerrado
-            </p>
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#c9a46a]/20 bg-[#c9a46a]/5">
-              <Phone size={20} className="text-[#d6ad6d]" strokeWidth={1.4} />
+          <div className="col-12 col-md-4">
+            <div className="d-flex flex-column align-items-center">
+              <div
+                className="d-flex align-items-center justify-content-center rounded-circle mb-3"
+                style={{ width: 48, height: 48, border: "1px solid rgba(201,164,106,.2)", background: "rgba(201,164,106,.05)" }}
+              >
+                <Phone size={20} style={{ color: "#d6ad6d" }} strokeWidth={1.4} />
+              </div>
+              <p className="mb-1" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.7)" }}>CONTACTO</p>
+              <p className="mb-1" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>+351 XXX XXX XXX</p>
+              <a
+                href="https://www.instagram.com/lampss_barber/"
+                target="_blank"
+                rel="noreferrer"
+                className="d-inline-flex align-items-center gap-2"
+                style={{ fontSize: 14, color: "rgba(214,173,109,.7)", transition: "color .3s" }}
+                onMouseEnter={e => e.currentTarget.style.color = "#d6ad6d"}
+                onMouseLeave={e => e.currentTarget.style.color = "rgba(214,173,109,.7)"}
+              >
+                <Instagram size={16} /> @lampss_barber
+              </a>
             </div>
-            <p className="text-[10px] font-semibold tracking-[.3em] text-white/70">CONTACTO</p>
-            <p className="mt-2 text-sm leading-6 text-white/40">+351 XXX XXX XXX</p>
-            <a
-              href="https://www.instagram.com/lampss_barber/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-[#d6ad6d]/70 transition hover:text-[#d6ad6d]"
-            >
-              <Instagram size={16} /> @lampss_barber
-            </a>
           </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/[.06]">
-        <div className="mx-auto flex w-[min(1120px,calc(100%-32px))] flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-          <p className="text-[9px] tracking-[.22em] text-white/20">
+      <div className="border-top" style={{ borderColor: "rgba(255,255,255,.06) !important" }}>
+        <div className="container d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3" style={{ padding: "20px 0" }}>
+          <p className="mb-0" style={{ fontSize: 9, letterSpacing: ".22em", color: "rgba(255,255,255,.2)" }}>
             © {new Date().getFullYear()} LAMPS BARBER — TODOS OS DIREITOS RESERVADOS
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="group flex items-center gap-2 text-[9px] tracking-[.22em] text-white/25 transition hover:text-[#d6ad6d]/70"
+            className="d-flex align-items-center gap-2 bg-transparent border-0"
+            style={{ fontSize: 9, letterSpacing: ".22em", color: "rgba(255,255,255,.25)", cursor: "pointer", transition: "color .3s" }}
+            onMouseEnter={e => e.currentTarget.style.color = "rgba(214,173,109,.7)"}
+            onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,.25)"}
           >
             VOLTAR AO TOPO
-            <ArrowUp size={14} className="transition group-hover:-translate-y-0.5" />
+            <ArrowUp size={14} />
           </button>
         </div>
       </div>

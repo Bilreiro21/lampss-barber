@@ -118,71 +118,86 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-82px)] w-[min(1180px,calc(100%-32px))] items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8 }}
-          className="flex w-full max-w-[650px] flex-col items-center pb-16 pt-16 text-center lg:pb-24"
-        >
-          <p className="mb-7 text-[11px] font-semibold tracking-[.48em] text-[#e2c58e]">
-            MAIS DO QUE UM CORTE
-          </p>
+      <div className="position-relative" style={{ zIndex: 10 }}>
+        <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: "calc(100vh - 82px)" }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: .8 }}
+            className="text-center w-100 py-4 py-md-5"
+            style={{ maxWidth: 650 }}
+          >
+            <p className="mb-3 mb-md-4" style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".48em", color: "#e2c58e" }}>
+              MAIS DO QUE UM CORTE
+            </p>
 
-          <h1 className="hero-title font-serif text-[clamp(4.4rem,9vw,8.5rem)] font-semibold uppercase leading-[.77] tracking-[-.06em]">
-            <span className="block text-[#e2c58e]">LAMPS</span>
-            <span className="block text-white">BARBER</span>
-          </h1>
+            <h1 className="hero-title font-serif text-uppercase" style={{ fontSize: "clamp(3.2rem, 12vw, 8.5rem)", fontWeight: 600, lineHeight: .77, letterSpacing: "-.06em" }}>
+              <span className="d-block" style={{ color: "#e2c58e" }}>LAMPS</span>
+              <span className="d-block text-white">BARBER</span>
+            </h1>
 
-          <div className="mt-8 flex items-center gap-4 text-[11px] font-semibold tracking-[.48em] text-white/80">
-            <span>ESTILO</span><i className="h-1 w-1 rounded-full bg-[#c9a46a]" />
-            <span>QUALIDADE</span><i className="h-1 w-1 rounded-full bg-[#c9a46a]" />
-            <span>ATITUDE</span>
-          </div>
+            <div className="d-flex align-items-center justify-content-center gap-3 mt-4" style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".48em", color: "rgba(255,255,255,.8)" }}>
+              <span>ESTILO</span><i className="rounded-circle d-inline-block" style={{ width: 4, height: 4, background: "#c9a46a" }} />
+              <span>QUALIDADE</span><i className="rounded-circle d-inline-block" style={{ width: 4, height: 4, background: "#c9a46a" }} />
+              <span>ATITUDE</span>
+            </div>
 
-          <p className="mt-7 max-w-lg text-[15px] leading-7 text-white/55">
-            Barbearia moderna, com um ambiente único e um serviço pensado ao detalhe.
-            Aqui, cada corte conta uma história.
-          </p>
+            <p className="mx-auto mt-4" style={{ maxWidth: 480, fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,.55)" }}>
+              Barbearia moderna, com um ambiente único e um serviço pensado ao detalhe.
+              Aqui, cada corte conta uma história.
+            </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#marcacoes" className="inline-flex items-center gap-3 bg-[#d6ad6d] px-7 py-4 text-[10px] font-black tracking-[.18em] text-black transition hover:bg-[#edcf98]">
-              <CalendarDays size={16} /> MARCAR HORÁRIO
-            </a>
-            <a href="#trabalho" className="inline-flex items-center gap-3 border border-white/30 bg-black/10 px-7 py-4 text-[10px] font-bold tracking-[.18em] text-white transition hover:border-white/70">
-              <Instagram size={16} /> VER TRABALHOS
-            </a>
-          </div>
+            <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 mt-4">
+              <a
+                href="#marcacoes"
+                className="d-inline-flex align-items-center justify-content-center gap-2"
+                style={{ background: "#d6ad6d", padding: "14px 28px", fontSize: 10, fontWeight: 900, letterSpacing: ".18em", color: "#000", transition: "background .3s" }}
+                onMouseEnter={e => e.currentTarget.style.background = "#edcf98"}
+                onMouseLeave={e => e.currentTarget.style.background = "#d6ad6d"}
+              >
+                <CalendarDays size={16} /> MARCAR HORÁRIO
+              </a>
+              <a
+                href="#trabalho"
+                className="d-inline-flex align-items-center justify-content-center gap-2"
+                style={{ border: "1px solid rgba(255,255,255,.3)", background: "rgba(0,0,0,.1)", padding: "14px 28px", fontSize: 10, fontWeight: 700, letterSpacing: ".18em", color: "#fff", transition: "border-color .3s" }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(255,255,255,.7)"}
+                onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,.3)"}
+              >
+                <Instagram size={16} /> VER TRABALHOS
+              </a>
+            </div>
 
-          <div className="mt-12 grid w-full max-w-xl grid-cols-3 border-t border-white/10 pt-5">
-            <div className="flex justify-center gap-3">
-              <MapPin className="mt-0.5 text-[#d6ad6d]" size={22} strokeWidth={1.3} />
-              <div>
-                <p className="text-[10px] tracking-[.2em] text-white/80">BARREIRO</p>
-                <p className="mt-1 text-[8px] tracking-[.12em] text-white/35">R. Dom João de Castro 38, 2830-186</p>
+            <div className="row mt-5 pt-4 border-top" style={{ borderColor: "rgba(255,255,255,.1)" }}>
+              <div className="col-6 col-md-4 d-flex justify-content-center gap-2 mb-3 mb-md-0">
+                <MapPin className="mt-0.5 flex-shrink-0" size={20} strokeWidth={1.3} style={{ color: "#d6ad6d" }} />
+                <div className="text-start">
+                  <p className="mb-0" style={{ fontSize: 10, letterSpacing: ".2em", color: "rgba(255,255,255,.8)" }}>BARREIRO</p>
+                  <p className="mb-0 mt-1" style={{ fontSize: 8, letterSpacing: ".12em", color: "rgba(255,255,255,.35)" }}>R. Dom João de Castro 38, 2830-186</p>
+                </div>
+              </div>
+              <div className="col-6 col-md-4 d-flex justify-content-center gap-2 mb-3 mb-md-0">
+                <Clock3 className="mt-0.5 flex-shrink-0" size={20} strokeWidth={1.3} style={{ color: "#d6ad6d" }} />
+                <div className="text-start">
+                  <p className="mb-0" style={{ fontSize: 10, letterSpacing: ".2em", color: "rgba(255,255,255,.8)" }}>TER — SÁB</p>
+                  <p className="mb-0 mt-1" style={{ fontSize: 8, letterSpacing: ".12em", color: "rgba(255,255,255,.35)" }}>09:00 — 20:00</p>
+                </div>
+              </div>
+              <div className="col-12 col-md-4 d-flex justify-content-center gap-2">
+                <Scissors className="mt-0.5 flex-shrink-0" size={20} strokeWidth={1.3} style={{ color: "#d6ad6d" }} />
+                <div className="text-start">
+                  <p className="mb-0" style={{ fontSize: 10, letterSpacing: ".2em", color: "rgba(255,255,255,.8)" }}>QUALIDADE</p>
+                  <p className="mb-0 mt-1" style={{ fontSize: 8, letterSpacing: ".12em", color: "rgba(255,255,255,.35)" }}>EM CADA DETALHE</p>
+                </div>
               </div>
             </div>
-            <div className="flex justify-center gap-3">
-              <Clock3 className="mt-0.5 text-[#d6ad6d]" size={22} strokeWidth={1.3} />
-              <div>
-                <p className="text-[10px] tracking-[.2em] text-white/80">TER — SÁB</p>
-                <p className="mt-1 text-[8px] tracking-[.12em] text-white/35">09:00 — 20:00</p>
-              </div>
-            </div>
-            <div className="hidden justify-center gap-3 sm:flex">
-              <Scissors className="mt-0.5 text-[#d6ad6d]" size={22} strokeWidth={1.3} />
-              <div>
-                <p className="text-[10px] tracking-[.2em] text-white/80">QUALIDADE</p>
-                <p className="mt-1 text-[8px] tracking-[.12em] text-white/35">EM CADA DETALHE</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 z-20 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/35 md:flex">
-        <span className="text-[8px] tracking-[.45em]">SCROLL</span>
-        <span className="h-14 w-px bg-gradient-to-b from-[#c9a46a] to-transparent" />
+      <div className="position-absolute bottom-0 start-50 translate-middle-x d-none d-md-flex flex-column align-items-center gap-2" style={{ color: "rgba(255,255,255,.35)", zIndex: 20 }}>
+        <span style={{ fontSize: 8, letterSpacing: ".45em" }}>SCROLL</span>
+        <span style={{ height: 56, width: 1, background: "linear-gradient(to bottom, #c9a46a, transparent)" }} />
       </div>
     </section>
   );

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  CalendarDays,
   Clock3,
   Instagram,
   MapPin,
@@ -148,15 +147,6 @@ export default function Hero() {
             </p>
 
             <div className="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-sm-3 mt-4">
-              <a
-                href="#marcacoes"
-                className="d-inline-flex align-items-center justify-content-center gap-2"
-                style={{ background: "#d6ad6d", padding: "14px 28px", fontSize: 10, fontWeight: 900, letterSpacing: ".18em", color: "#000", transition: "background .3s" }}
-                onMouseEnter={e => e.currentTarget.style.background = "#edcf98"}
-                onMouseLeave={e => e.currentTarget.style.background = "#d6ad6d"}
-              >
-                <CalendarDays size={16} /> MARCAR HORÁRIO
-              </a>
               <a
                 href="#trabalho"
                 className="d-inline-flex align-items-center justify-content-center gap-2"

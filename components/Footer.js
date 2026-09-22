@@ -68,7 +68,8 @@ export default function Footer() {
               </div>
               <p className="mb-1" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.7)" }}>HORÁRIO</p>
               <p className="mb-0" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>
-                Ter — Sáb: 09:00 — 20:00<br />
+                Ter — Sáb: 09:30 — 19:00<br />
+                (Almoço: 13:00 — 15:00)<br />
                 Dom e Seg: Encerrado
               </p>
             </div>

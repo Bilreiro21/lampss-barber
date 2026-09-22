@@ -180,7 +180,7 @@ export default function Hero() {
                 <Clock3 className="mt-0.5 flex-shrink-0" size={20} strokeWidth={1.3} style={{ color: "#d6ad6d" }} />
                 <div className="text-start">
                   <p className="mb-0" style={{ fontSize: 10, letterSpacing: ".2em", color: "rgba(255,255,255,.8)" }}>TER — SÁB</p>
-                  <p className="mb-0 mt-1" style={{ fontSize: 8, letterSpacing: ".12em", color: "rgba(255,255,255,.35)" }}>09:00 — 20:00</p>
+                  <p className="mb-0 mt-1" style={{ fontSize: 8, letterSpacing: ".12em", color: "rgba(255,255,255,.35)" }}>09:30 — 19:00</p>
                 </div>
               </div>
               <div className="col-12 col-md-4 d-flex justify-content-center gap-2">

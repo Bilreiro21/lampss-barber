@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Scissors, Sparkles, Wind, UserRound } from "lucide-react";
 
 const services = [
@@ -14,16 +15,28 @@ export default function ServicesPreview() {
   return (
     <section id="servicos" className="position-relative" style={{ borderTop: "1px solid rgba(255,255,255,.08)", background: "#080706", padding: "80px 0" }}>
       <div className="container">
-        <div className="text-center mb-5">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="text-center mb-5"
+        >
           <p className="mb-3" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".55em", color: "#d6ad6d" }}>OS NOSSOS SERVIÇOS</p>
           <h2 className="font-serif text-uppercase" style={{ fontSize: "clamp(1.6rem, 5vw, 2.2rem)", letterSpacing: ".15em" }}>
             Cuidamos de cada detalhe
           </h2>
-        </div>
+        </motion.div>
 
         <div className="row g-3">
-          {services.map(([title, Icon]) => (
-            <div key={title} className="col-6 col-lg">
+          {services.map(([title, Icon], i) => (
+            <motion.div 
+              key={title} 
+              className="col-6 col-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
               <div
                 className="text-center h-100 d-flex flex-column align-items-center justify-content-center"
                 style={{
@@ -39,7 +52,7 @@ export default function ServicesPreview() {
                 <Icon size={34} strokeWidth={1} style={{ color: "#d6ad6d" }} />
                 <p className="mt-4 mb-0" style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.8)" }}>{title}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

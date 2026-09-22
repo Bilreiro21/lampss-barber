@@ -22,7 +22,12 @@ export default function About() {
             </div>
           </motion.div>
 
-          <div className="col-12 col-md-6">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="col-12 col-md-6"
+          >
             <p className="mb-3" style={{ fontSize: 10, letterSpacing: ".55em", color: "#d6ad6d" }}>SOBRE NÓS</p>
             <h2 className="font-serif text-uppercase" style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)", lineHeight: .95, letterSpacing: ".03em" }}>
               Técnica.<br />Estilo.<br /><span style={{ color: "#d6ad6d" }}>Atitude.</span>
@@ -41,7 +46,7 @@ export default function About() {
                 <p className="mb-0" style={{ fontSize: 9, letterSpacing: ".3em", color: "rgba(255,255,255,.35)" }}>PRECISÃO</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

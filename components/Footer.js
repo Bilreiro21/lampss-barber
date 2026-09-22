@@ -1,6 +1,7 @@
 "use client";
 
 import { Instagram, MapPin, Phone, Clock3, Scissors, ArrowUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -9,7 +10,14 @@ export default function Footer() {
       <div style={{ height: 1, background: "linear-gradient(to right, transparent, rgba(201,164,106,.4), transparent)" }} />
 
       {/* Main footer content */}
-      <div className="container" style={{ padding: "80px 0" }}>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="container"
+        style={{ padding: "80px 0" }}
+      >
         {/* Top section — Logo + tagline centered */}
         <div className="d-flex flex-column align-items-center text-center mb-5">
           <img
@@ -91,7 +99,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom bar */}
       <div className="border-top" style={{ borderColor: "rgba(255,255,255,.06) !important" }}>

@@ -1,12 +1,19 @@
 "use client";
 
 import { CalendarDays, Instagram, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Booking() {
   return (
     <section id="marcacoes" className="position-relative overflow-hidden" style={{ borderTop: "1px solid rgba(255,255,255,.1)", borderBottom: "1px solid rgba(255,255,255,.1)", background: "#0d0b09", padding: "112px 0" }}>
       <div className="position-absolute top-0 start-0 w-100 h-100" style={{ background: "radial-gradient(circle at 50% 100%, rgba(201,164,106,.14), transparent 42%)" }} />
-      <div className="container position-relative text-center">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="container position-relative text-center"
+      >
         <p className="mb-3" style={{ fontSize: 10, letterSpacing: ".55em", color: "#d6ad6d" }}>MARCAÇÃO</p>
         <h2 className="font-serif text-uppercase" style={{ fontSize: "clamp(2rem, 7vw, 5rem)", lineHeight: 1 }}>
           O próximo<br /><span style={{ color: "#d6ad6d" }}>corte começa aqui.</span>
@@ -39,7 +46,7 @@ export default function Booking() {
           </a>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

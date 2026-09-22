@@ -76,7 +76,7 @@ export default function Footer() {
                 <Phone size={20} style={{ color: "#d6ad6d" }} strokeWidth={1.4} />
               </div>
               <p className="mb-1" style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".3em", color: "rgba(255,255,255,.7)" }}>CONTACTO</p>
-              <p className="mb-1" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>+351 XXX XXX XXX</p>
+              <p className="mb-1" style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(255,255,255,.4)" }}>+351 914 840 333</p>
               <a
                 href="https://www.instagram.com/lampss_barber/"
                 target="_blank"

@@ -54,7 +54,7 @@ export default function Navbar() {
           <a href="https://www.instagram.com/lampss_barber/" target="_blank" rel="noreferrer" aria-label="Instagram">
             <Instagram size={19} strokeWidth={1.5} className="text-white transition hover:text-[#e2c58e]" />
           </a>
-          <a href="https://wa.me/351000000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <a href="https://wa.me/351914840333" target="_blank" rel="noreferrer" aria-label="WhatsApp">
             <MessageCircle size={18} strokeWidth={1.5} className="text-white transition hover:text-[#e2c58e]" />
           </a>
           <a

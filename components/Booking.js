@@ -16,7 +16,7 @@ export default function Booking() {
         </p>
         <div className="d-flex flex-column flex-sm-row flex-wrap justify-content-center gap-2 gap-sm-3 mt-4">
           <a
-            href="https://wa.me/351000000000"
+            href="https://wa.me/351914840333"
             target="_blank"
             rel="noreferrer"
             className="d-inline-flex align-items-center justify-content-center gap-2"
